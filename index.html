@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishanth S - AI & ML Engineer | Portfolio</title>
+    <meta name="description" content="Portfolio of Nishanth S - AI & Machine Learning Engineer, Software Developer, and Trading Analyst based in Bengaluru, India">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        * {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0a0a0f;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #22d3ee, #3b82f6);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #06b6d4, #2563eb);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .role-text {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0f] text-gray-100">
+    <!-- Loading Screen -->
+    <div id="loading" class="fixed inset-0 bg-[#0a0a0f] flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-cyan-400 font-mono text-sm tracking-wider animate-pulse">INITIALIZING PORTFOLIO...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-tight">
+                        Portfolio
+                    </h1>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-1">
+                        <a href="#home" class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Home</a>
+                        <a href="#about" class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">About</a>
+                        <a href="#skills" class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Skills</a>
+                        <a href="#projects" class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Projects</a>
+                        <a href="#education" class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Education</a>
+                        <a href="#strengths" class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Strengths</a>
+                        <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Contact</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0f]/98 backdrop-blur-lg border-b border-cyan-500/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Home</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">About</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Skills</a>
+                <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Projects</a>
+                <a href="#education" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Education</a>
+                <a href="#strengths" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Strengths</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <!-- Animated background -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <div class="mb-6 inline-block">
+                    <span class="text-cyan-400 font-mono text-sm tracking-widest animate-pulse">AVAILABLE FOR OPPORTUNITIES</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+                    <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                        Nishanth S
+                    </span>
+                </h1>
+
+                <div class="h-20 mb-8">
+                    <h2 id="role-text" class="text-2xl md:text-3xl font-semibold text-gray-300 role-text">
+                        AI & Machine Learning Engineer
+                    </h2>
+                </div>
+
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Final-year BE student specializing in AI & Machine Learning with a passion for building intelligent systems 
+                    and analyzing financial markets. Based in Bengaluru, India.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <a href="#projects" class="group px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-2">
+                        View Projects
+                        <i data-lucide="chevron-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                     <a href="Nishanth_S.pdf" download
+                        class="px-8 py-3 border-2 border-cyan-500/50 rounded-lg font-semibold hover:bg-cyan-500/10 hover:border-cyan-500 transition-all duration-300 flex items-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Resume
+                    </a>
+                    <a href="mailto:nishanth.siddarajuk@gmail.com" class="px-8 py-3 border-2 border-cyan-500/50 rounded-lg font-semibold hover:bg-cyan-500/10 hover:border-cyan-500 transition-all duration-300">
+                        Contact Me
+                    </a>
+                </div>
+
+                <div class="flex justify-center gap-6">
+                    <a href="https://www.linkedin.com/in/nishanth-s-raj" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors transform hover:scale-110 duration-300">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://github.com/nishanths24" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors transform hover:scale-110 duration-300">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="mailto:nishanth.siddarajuk@gmail.com" class="text-gray-400 hover:text-cyan-400 transition-colors transform hover:scale-110 duration-300">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-cyan-400"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    About Me
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-8 md:p-12 shadow-xl shadow-cyan-500/10">
+                    <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+                        <p>
+                            I'm a <span class="text-cyan-400 font-semibold">final-year BE student in Computer Science & Engineering (AI & ML)</span>, 
+                            passionate about leveraging artificial intelligence and machine learning to solve real-world problems.
+                        </p>
+                        
+                        <p>
+                            My expertise spans across <span class="text-cyan-400 font-semibold">AI model development, deep learning frameworks, and data analysis</span>. 
+                            I thrive on building intelligent systems that make a meaningful impact, from stock market prediction models to deepfake detection systems.
+                        </p>
+                        
+                        <p>
+                            Beyond AI, I have a keen interest in <span class="text-cyan-400 font-semibold">financial markets and trading analytics</span>. 
+                            I analyze price action, support and resistance levels, and develop strategies for intraday and swing trading.
+                        </p>
+                        
+                        <p>
+                            As a <span class="text-cyan-400 font-semibold">quick learner and adaptable team player</span>, I excel in both collaborative 
+                            environments and independent projects. I'm always eager to take on new challenges and expand my skill set.
+                        </p>
+
+                        <div class="pt-6 flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-medium">English</span>
+                            <span class="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-medium">Kannada</span>
+                            <span class="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-medium">Bengaluru, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Technical Arsenal
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Programming -->
+                <div class="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="code" class="text-cyan-400 w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-cyan-400">Programming</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Python</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Java</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">C++</span>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="code" class="text-cyan-400 w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-cyan-400">Web Development</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">HTML</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">CSS</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">React</span>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="database" class="text-cyan-400 w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-cyan-400">Database</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">MySQL</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- AI & ML -->
+                <div class="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="brain" class="text-cyan-400 w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-cyan-400">AI & ML</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Machine Learning</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Deep Learning</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Model Training</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Data Preprocessing</span>
+                    </div>
+                </div>
+
+                <!-- Trading & Analysis -->
+                <div class="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="trending-up" class="text-cyan-400 w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-cyan-400">Trading & Analysis</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Intraday & Swing Trading</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Price Action Analysis</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Support & Resistance</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Trend Analysis</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-gray-300 rounded-lg text-sm hover:bg-cyan-500/30 transition-colors">Momentum Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Featured Projects
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-8 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="p-3 bg-cyan-500/20 rounded-xl group-hover:bg-cyan-500/30 transition-colors">
+                            <i data-lucide="trending-up" class="text-cyan-400 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyan-400">Stock Market Analysis Using AI</h3>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6 leading-relaxed">AI-based system to analyze stock data and identify trends using machine learning algorithms and predictive analytics.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-medium">Python</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-medium">Machine Learning</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-medium">Data Analysis</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-medium">Trading</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button class="flex items-center gap-2 px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 rounded-lg transition-colors">
+                            <i data-lucide="github" class="w-4 h-4"></i>
+                            <span>GitHub</span>
+                        </button>
+                        <button class="flex items-center gap-2 px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <span>Demo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-8 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="p-3 bg-cyan-500/20 rounded-xl group-hover:bg-cyan-500/30 transition-colors">
+                            <i data-lucide="brain" class="text-cyan-400 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyan-400">Deepfake Detection And Anti-AI Poisoning Framework</h3>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6 leading-relaxed">Developed a deep learning based framework to detect deepfake images and enhance model robustness by defending against AI data poisoning attacks, improving the reliability and security of media authentication systems.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-medium">Deep Learning</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-medium">CNN</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-medium">Python</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-medium">Computer Vision</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button class="flex items-center gap-2 px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 rounded-lg transition-colors">
+                            <i data-lucide="github" class="w-4 h-4"></i>
+                            <span>GitHub</span>
+                        </button>
+                        <button class="flex items-center gap-2 px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 rounded-lg transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <span>Demo</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Education Timeline
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 to-blue-500"></div>
+
+                    <!-- Education item 1 -->
+                    <div class="relative mb-12 ml-20">
+                        <div class="absolute -left-[52px] top-6 w-4 h-4 bg-cyan-500 rounded-full border-4 border-[#0a0a0f]"></div>
+                        <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-cyan-500/20 rounded-xl">
+                                    <i data-lucide="book-open" class="text-cyan-400 w-6 h-6"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-cyan-400 mb-2">BE in Computer Science & Engineering (AI & ML)</h3>
+                                    <p class="text-gray-300 font-medium mb-1">Visvesvaraya Technological University</p>
+                                    <p class="text-gray-400 text-sm">Graduating 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education item 2 -->
+                    <div class="relative mb-12 ml-20">
+                        <div class="absolute -left-[52px] top-6 w-4 h-4 bg-cyan-500 rounded-full border-4 border-[#0a0a0f]"></div>
+                        <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-cyan-500/20 rounded-xl">
+                                    <i data-lucide="award" class="text-cyan-400 w-6 h-6"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-cyan-400 mb-2">PUC – Science</h3>
+                                    <p class="text-gray-300 font-medium mb-1">SDM Residential PU College</p>
+                                    <p class="text-gray-400 text-sm">2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education item 3 -->
+                    <div class="relative mb-12 ml-20">
+                        <div class="absolute -left-[52px] top-6 w-4 h-4 bg-cyan-500 rounded-full border-4 border-[#0a0a0f]"></div>
+                        <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-cyan-500/20 rounded-xl">
+                                    <i data-lucide="award" class="text-cyan-400 w-6 h-6"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-cyan-400 mb-2">SSLC</h3>
+                                    <p class="text-gray-300 font-medium mb-1">BGS English Medium School</p>
+                                    <p class="text-gray-400 text-sm">2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section id="strengths" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Key Strengths
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 text-center hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                    <div class="inline-flex p-4 bg-cyan-500/20 rounded-full mb-4">
+                        <i data-lucide="brain" class="text-cyan-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-200">Strong Analytical Skills</h3>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 text-center hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                    <div class="inline-flex p-4 bg-cyan-500/20 rounded-full mb-4">
+                        <i data-lucide="award" class="text-cyan-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-200">Quick Learner</h3>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 text-center hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                    <div class="inline-flex p-4 bg-cyan-500/20 rounded-full mb-4">
+                        <i data-lucide="message-square" class="text-cyan-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-200">Team & Independent Working</h3>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 text-center hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1">
+                    <div class="inline-flex p-4 bg-cyan-500/20 rounded-full mb-4">
+                        <i data-lucide="message-square" class="text-cyan-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-200">Good Communication</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Get In Touch
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-4 text-lg">
+                    Interested in collaboration or have an opportunity? Let's connect!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-cyan-500/20 rounded-xl">
+                                <i data-lucide="mail" class="text-cyan-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-1">Email</h3>
+                                <a href="mailto:nishanth@example.com" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                                    nishanth.siddarajuk@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-cyan-500/20 rounded-xl">
+                                <i data-lucide="phone" class="text-cyan-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-1">Phone</h3>
+                                <a href="tel:+918867433501" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                                    +91 8867433501
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-cyan-500/20 rounded-xl">
+                                <i data-lucide="map-pin" class="text-cyan-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-1">Location</h3>
+                                <p class="text-gray-300">Bengaluru, Karnataka, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-6 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-cyan-500/20 rounded-xl">
+                                <i data-lucide="linkedin" class="text-cyan-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-1">LinkedIn</h3>
+                                <a href="https://linkedin.com" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                                    linkedin.com/in/nishanth-s
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-8">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                required
+                                class="w-full px-4 py-3 bg-[#0a0a0f]/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:border-cyan-400 text-gray-100 transition-colors"
+                                placeholder="Your name"
+                            />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 bg-[#0a0a0f]/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:border-cyan-400 text-gray-100 transition-colors"
+                                placeholder="your@email.com"
+                            />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea
+                                name="message"
+                                rows="5"
+                                required
+                                class="w-full px-4 py-3 bg-[#0a0a0f]/50 border border-cyan-500/30 rounded-lg focus:outline-none focus:border-cyan-400 text-gray-100 transition-colors resize-none"
+                                placeholder="Your message..."
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                            Send Message
+                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-cyan-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-400 text-sm">
+                    © 2026 Nishanth S • Engineered for the Future
+                </p>
+                
+                <div class="flex gap-6">
+                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:nishanth.siddarajul@gmail.com" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scroll-top" class="hidden fixed bottom-8 right-8 p-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full shadow-lg shadow-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/70 transition-all duration-300 z-40">
+        <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </button>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Loading screen
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+        }, 2000);
+
+        // Role rotation
+        const roles = [
+            'AI & Machine Learning Engineer',
+            'Software Developer',
+            'Trading & Financial Analyst',
+            'Data Analysis Specialist'
+        ];
+        let currentRole = 0;
+
+        setInterval(() => {
+            const roleText = document.getElementById('role-text');
+            roleText.style.opacity = '0';
+            
+            setTimeout(() => {
+                currentRole = (currentRole + 1) % roles.length;
+                roleText.textContent = roles[currentRole];
+                roleText.style.opacity = '1';
+            }, 500);
+        }, 3000);
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const scrollTop = document.getElementById('scroll-top');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-[#0a0a0f]/95', 'backdrop-blur-lg', 'border-b', 'border-cyan-500/20', 'shadow-lg', 'shadow-cyan-500/5');
+                scrollTop.classList.remove('hidden');
+            } else {
+                navbar.classList.remove('bg-[#0a0a0f]/95', 'backdrop-blur-lg', 'border-b', 'border-cyan-500/20', 'shadow-lg', 'shadow-cyan-500/5');
+                scrollTop.classList.add('hidden');
+            }
+
+            // Active section highlighting
+            const sections = ['home', 'about', 'skills', 'projects', 'education', 'strengths', 'contact'];
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach((section, index) => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        navLinks.forEach(link => link.classList.remove('bg-cyan-500/20', 'text-cyan-400', 'shadow-lg', 'shadow-cyan-500/20'));
+                        navLinks[index]?.classList.add('bg-cyan-500/20', 'text-cyan-400', 'shadow-lg', 'shadow-cyan-500/20');
+                    }
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Scroll to top
+        document.getElementById('scroll-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
